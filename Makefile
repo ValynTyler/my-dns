@@ -1,0 +1,2 @@
+run:
+	./secrets.sh
