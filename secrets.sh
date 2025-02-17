@@ -16,12 +16,12 @@ set_secret() {
 
     # Check if the secret already exists in the .env file
     if grep -q "^$key=" "$ENV_FILE"; then
-        echo "󰄲 $key already set. Skipping..."
+        echo "󰱒 $key already set. Skipping..."
     else
-        read -p "󰄱 Enter value for $key: " value
+        read -p "󰄗 Enter value for $key: " value
         tput cuu1 && tput el
         echo "$key=$value" >> "$ENV_FILE"
-        echo "󰄲 $key added to $ENV_FILE."
+        echo "󰱒 $key added to $ENV_FILE."
     fi
 }
 
