@@ -2,6 +2,7 @@
 
 export DNS_RECORD_CONTENT="$(curl ifconfig.me)"
 export DNS_RECORD_NAME="valyntyler.com"
+export DNS_RECORD_ID="$(dnslist | jq -r '.result[] | select(.type == "A") | select(.name == "valyntyler.com") | .id')"
 
 curl https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$DNS_RECORD_ID \
   -X PATCH \
