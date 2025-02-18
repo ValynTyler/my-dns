@@ -3,7 +3,7 @@
 DNS_RECORD_CONTENT="$(curl ifconfig.me)"
 DNS_RECORD_NAME="valyntyler.com"
 DNS_RECORD_TYPE="A"
-DNS_RECORD_ID="$(dnslist | jq -r '.result[]
+DNS_RECORD_ID="$(dns-list | jq -r '.result[]
   | select(.type == "'$DNS_RECORD_TYPE'")
   | select(.name == "'$DNS_RECORD_NAME'")
   | .id
